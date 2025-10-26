@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
+// import Header from './component/Header'
+// import Footer from './component/Footer'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <h2 className='text-4xl font-bold text-blue-600'>HNG STAGE TWO TASK</h2>
-     <p className='text-3xl font-semibold text-black'>Building a ticketing app with 3 frameworks</p>
+      <AppRoutes />
     </>
   )
 }
+
 
 export default App
