@@ -1,9 +1,8 @@
-"use client"
-
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { userStorage, sessionStorage } from "../../utils/Storage"
 import { validateField } from "../../utils/Validators"
+import toast from "react-hot-toast"
 
 export default function Login() {
   const navigate = useNavigate()
@@ -33,6 +32,7 @@ export default function Login() {
 
     if (!validateForm()) {
       setIsLoading(false)
+      toast.error("Please fix the form errors before submitting.")
       return
     }
 
@@ -41,9 +41,11 @@ export default function Login() {
 
       if (user && user.password === formData.password) {
         sessionStorage.setCurrentUser({ email: user.email, id: user.id })
+        toast.success("Login successful! Redirecting...")
         navigate("/dashboard")
       } else {
         setErrors({ general: "Invalid email or password" })
+        toast.error("Invalid email or password.")
       }
       setIsLoading(false)
     }, 500)

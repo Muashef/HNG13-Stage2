@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { userStorage, sessionStorage } from "../../utils/Storage"
 import { validateField } from "../../utils/Validators"
+import toast from "react-hot-toast"
 
 export default function Signup() {
   const navigate = useNavigate()
@@ -45,6 +46,7 @@ export default function Signup() {
 
     if (!validateForm()) {
       setIsLoading(false)
+      toast.error("Please fix the form errors before submitting.")
       return
     }
 
@@ -56,7 +58,8 @@ export default function Signup() {
       })
 
       sessionStorage.setCurrentUser({ email: newUser.email, id: newUser.id })
-      navigate("/dashboard")
+      toast.success("Signup successful! Redirecting...")
+      navigate("/login")
       setIsLoading(false)
     }, 500)
   }

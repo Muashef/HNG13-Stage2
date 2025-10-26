@@ -4,6 +4,7 @@ import { sessionStorage, ticketStorage } from "../utils/Storage"
 import TicketForm from "../components/TicketForm"
 import TicketList from "../components/TicketList"
 import TicketStats from "../components/TicketStats"
+import toast from "react-hot-toast"
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -16,6 +17,7 @@ export default function Dashboard() {
   useEffect(() => {
     const user = sessionStorage.getCurrentUser()
     if (!user) {
+      toast.error("Session expired. Please log in again.")
       navigate("/login")
       return
     }
@@ -29,24 +31,40 @@ export default function Dashboard() {
     const newTicket = ticketStorage.add(ticketData, currentUser.id)
     setTickets([...tickets, newTicket])
     setShowForm(false)
+    toast.success("Ticket added successfully!")
   }
 
-  const handleUpdateTicket = (ticketData) => {
-    if (!editingTicket) return
-
-    const updatedTicket = ticketStorage.update(editingTicket.id, ticketData)
-    setTickets(tickets.map((t) => (t.id === editingTicket.id ? updatedTicket : t)))
-    setEditingTicket(null)
-    setShowForm(false)
+ const handleUpdateTicket = (ticketData) => {
+  if (!editingTicket) {
+    toast.error("No ticket selected for update.")
+    return
   }
+
+  const updatedTicket = ticketStorage.update(editingTicket.id, ticketData)
+
+  if (!updatedTicket) {
+    toast.error("Failed to update ticket. Please try again.")
+    return
+  }
+
+  setTickets((prev) =>
+    prev.map((t) => (t.id === editingTicket.id ? updatedTicket : t))
+  )
+
+  setEditingTicket(null)
+  setShowForm(false)
+  toast.success("Ticket updated successfully ✅")
+}
 
   const handleDeleteTicket = (ticketId) => {
     ticketStorage.delete(ticketId)
     setTickets(tickets.filter((t) => t.id !== ticketId))
+    toast.success("Ticket deleted 🗑️")
   }
 
   const handleLogout = () => {
     sessionStorage.clearCurrentUser()
+    toast("Logged out successfully 👋")
     navigate("/")
   }
 
