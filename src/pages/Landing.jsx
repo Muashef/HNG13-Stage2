@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { sessionStorage } from "../utils/Storage"
@@ -101,11 +99,11 @@ const Landing = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={handleGetStarted}
-              className="px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg font-semibold text-lg transition transform hover:scale-105"
+              className="px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg font-semibold text-lg transition transform hover:scale-105 cursor-pointer"
             >
               Get Started
             </button>
-            <button className="px-8 py-4 border-2 border-slate-500 hover:border-slate-300 rounded-lg font-semibold text-lg transition">
+            <button className="px-8 py-4 border-2 border-slate-500 hover:border-slate-300 rounded-lg font-semibold text-lg transition cursor-pointer">
               Learn More
             </button>
           </div>
