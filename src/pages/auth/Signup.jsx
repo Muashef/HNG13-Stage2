@@ -99,7 +99,7 @@ export default function Signup() {
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
-                placeholder="John Doe"
+                placeholder="Your name"
               />
               {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
             </div>
@@ -146,7 +146,7 @@ export default function Signup() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:opacity-50 rounded-lg font-semibold text-white transition mt-6"
+              className="w-full py-3 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:opacity-50 rounded-lg cursor-pointer font-semibold text-white transition mt-6"
             >
               {isLoading ? "Creating Account..." : "Create Account"}
             </button>
@@ -154,7 +154,7 @@ export default function Signup() {
 
           <p className="text-center text-slate-400 mt-6">
             Already have an account?{" "}
-            <Link to="/login" className="text-cyan-400 hover:text-cyan-300 font-medium">
+            <Link to="/login" className="text-cyan-400 hover:text-cyan-300 font-medium cursor-pointer">
               Sign in
             </Link>
           </p>

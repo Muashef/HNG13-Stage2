@@ -1,5 +1,4 @@
 // localStorage utility functions for user and ticket management
-
 export const storageKeys = {
   USERS: "users",
   CURRENT_USER: "currentUser",
