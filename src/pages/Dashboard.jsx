@@ -80,7 +80,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
-      {/* Header */}
+
       <header className="border-b border-slate-700 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div>
@@ -98,12 +98,10 @@ export default function Dashboard() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="max-w-6xl mx-auto px-6 py-8">
-        {/* Stats */}
+    
         <TicketStats tickets={tickets} />
 
-        {/* Controls */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
           <div className="flex gap-2 flex-wrap">
             {["all", "open", "in-progress", "closed"].map((status) => (
@@ -130,7 +128,6 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {/* Form */}
         {showForm && (
           <TicketForm
             onSubmit={editingTicket ? handleUpdateTicket : handleAddTicket}
@@ -139,7 +136,6 @@ export default function Dashboard() {
           />
         )}
 
-        {/* Tickets List */}
         <TicketList
           tickets={filteredTickets}
           onEdit={(ticket) => {
