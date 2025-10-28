@@ -85,7 +85,7 @@ export default function Dashboard() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              TicketFlow
+              TicketZen
             </h1>
             <p className="text-sm text-slate-400">Welcome, {currentUser.email}</p>
           </div>

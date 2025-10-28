@@ -71,7 +71,7 @@ export default function Login() {
             to="/"
             className="text-2xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-8 block"
           >
-            TicketFlow
+            TicketZen
           </Link>
 
           <h1 className="text-3xl font-bold text-white mb-2">Welcome Back</h1>

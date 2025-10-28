@@ -32,7 +32,7 @@ const Landing = () => {
       <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            TicketFlow
+            TicketZen
           </div>
           <div className="flex gap-4">
             {isLoggedIn ? (
@@ -114,7 +114,7 @@ const Landing = () => {
 
       {/* Features Section */}
       <div className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-16">Why Choose TicketFlow?</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">Why Choose TicketZen?</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
