@@ -17,7 +17,7 @@ const Landing = () => {
     if (isLoggedIn) {
       navigate("/dashboard")
     } else {
-      navigate("/login")
+      navigate("/signup")
     }
   }
 
@@ -103,8 +103,10 @@ const Landing = () => {
             >
               Get Started
             </button>
-            <button className="px-8 py-4 border-2 border-slate-500 hover:border-slate-300 rounded-lg font-semibold text-lg transition cursor-pointer">
-              Learn More
+            <button 
+            onClick={()=>navigate("/login")}
+            className="px-8 py-4 border-2 border-slate-500 hover:border-slate-300 rounded-lg font-semibold text-lg transition cursor-pointer">
+              Login
             </button>
           </div>
         </div>
